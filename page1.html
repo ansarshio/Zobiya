@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>For Zobiya 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alex+Brush&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --pink:#FF69B4; --deep:#FF1493; --bg:linear-gradient(135deg,#FFD1DC,#FFF0F5,#FFB6C1);
+    --btn:linear-gradient(135deg,#FF69B4,#FF1493,#DC143C); --shadow:rgba(255,105,180,.35);
+    --h:'Great Vibes',cursive; --s:'Alex Brush',cursive; --b:'Poppins',sans-serif;
+  }
+  body{min-height:100vh;background:var(--bg);display:flex;align-items:flex-start;justify-content:center;font-family:var(--b);overflow-y:auto;padding:3rem 0}
+  .heart{position:fixed;font-size:20px;opacity:.8;animation:floatUp linear infinite;pointer-events:none;z-index:1}
+  @keyframes floatUp{from{transform:translateY(110vh)}to{transform:translateY(-10vh)}}
+  .card{background:rgba(255,255,255,.94);padding:3rem 2rem;border-radius:2.2rem;max-width:480px;width:90%;text-align:center;box-shadow:0 30px 60px var(--shadow);animation:fadeIn 1s ease;position:relative;z-index:5}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+  h1{font-family:var(--h);font-size:3.5rem;background:var(--btn);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.5rem}
+  .sub{font-family:var(--s);font-size:1.7rem;color:var(--deep);margin-bottom:1.5rem}
+  .big-heart{font-size:5rem;animation:pulse 1.8s infinite;margin:1rem 0 1.8rem}
+  @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}}
+  .btn{display:inline-block;background:var(--btn);padding:1rem 2.8rem;border-radius:3rem;text-decoration:none;color:white;font-family:var(--s);font-size:1.6rem;box-shadow:0 10px 25px var(--shadow);transition:0.2s}
+  .btn:hover{transform:scale(1.05)}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>For Zobiya 💖</h1>
+  <div class="sub">From your Lord 💙</div>
+  <div class="big-heart">❤️</div>
+  <a href="page2.html" class="btn">Open my apology 💌</a>
+</div>
+<script>
+  const hearts=["💖","💕","💗","❤️","💓","🌸"];
+  setInterval(()=>{
+    const h=document.createElement("div");h.className="heart";
+    h.innerText=hearts[Math.floor(Math.random()*hearts.length)];
+    h.style.left=Math.random()*100+"vw";h.style.animationDuration=3+Math.random()*4+"s";
+    document.body.appendChild(h);setTimeout(()=>h.remove(),7000);
+  },450);
+</script>
+</body>
+</html>

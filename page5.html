@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Forever Promise 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alex+Brush&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--pink:#FF69B4;--deep:#FF1493;--bg:linear-gradient(135deg,#FFD1DC,#FFF0F5,#FFB6C1);--btn:linear-gradient(135deg,#FF69B4,#FF1493,#DC143C);--shadow:rgba(255,105,180,.35);--h:'Great Vibes',cursive;--s:'Alex Brush',cursive;--b:'Poppins',sans-serif;}
+  body{min-height:100vh;background:var(--bg);display:flex;align-items:flex-start;justify-content:center;font-family:var(--b);overflow-y:auto;padding:3rem 0}
+  .heart{position:fixed;font-size:20px;opacity:.8;animation:floatUp linear infinite;pointer-events:none;z-index:1}
+  @keyframes floatUp{from{transform:translateY(110vh)}to{transform:translateY(-10vh)}}
+  .letter{background:rgba(255,255,255,.96);padding:2.8rem;border-radius:2.2rem;max-width:560px;width:92%;box-shadow:0 30px 60px var(--shadow);animation:fadeIn 1s;position:relative;z-index:5}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+  h1{font-family:var(--h);font-size:3rem;text-align:center;background:var(--btn);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem}
+  .text{font-size:1.05rem;line-height:1.8;color:#444;white-space:pre-line;min-height:200px}
+  .signature{margin-top:2rem;text-align:right;font-family:var(--s);font-size:1.8rem;color:var(--deep)}
+  .footer{text-align:center;margin-top:1.5rem;font-family:var(--s);font-size:1.3rem;color:var(--deep)}
+  .kiss-pop{position:fixed;font-size:26px;animation:kissPop 1.2s forwards;pointer-events:none;z-index:10}
+  @keyframes kissPop{0%{opacity:0;transform:scale(0.4)}30%{opacity:1}100%{opacity:0;transform:translateY(-70px) scale(1.4)}}
+</style>
+</head>
+<body>
+<div class="letter">
+  <h1>My Final Promise 💖</h1>
+  <div class="text" id="typewriter"></div>
+  <div class="signature">— Forever yours, Your Lord 💙</div>
+  <div class="footer">I love you, Zobiya ❤️</div>
+</div>
+<script>
+  const message = `My dearest Zobiya,\n\nFrom the bottom of my heart, I'm truly sorry for everything. You are the most precious person in my life, and I promise to never take you for granted again. Every day I will work to be the man you deserve — loving, caring, and always by your side.\n\nI promise to hold your hand through every storm, to celebrate every little joy with you, and to remind you every single day how much you mean to me. You are my home, my heart, and my forever.\n\nPlease forgive me, jaan. Let's start fresh, with more love and understanding. I am nothing without you.\n\nI love you more than words can ever say. 💖`;
+  let i=0, speed=35;
+  function type(){
+    if(i<message.length){
+      document.getElementById("typewriter").innerHTML+=message.charAt(i);
+      i++; setTimeout(type,speed);
+    } else {
+      // final kiss celebration
+      for(let s=0;s<8;s++) setTimeout(()=>{spawnKiss();}, s*200);
+    }
+  }
+  function spawnKiss(){
+    const k=document.createElement("div");k.className="kiss-pop";
+    k.innerText="💋💖";k.style.left=(30+Math.random()*40)+"%";k.style.top="55%";
+    document.body.appendChild(k);setTimeout(()=>k.remove(),1300);
+  }
+  type();
+  const hearts=["💖","💕","💗","❤️","💓","💞"];
+  setInterval(()=>{
+    const h=document.createElement("div");h.className="heart";
+    h.innerText=hearts[Math.floor(Math.random()*hearts.length)];
+    h.style.left=Math.random()*100+"vw";h.style.animationDuration=3+Math.random()*4+"s";
+    document.body.appendChild(h);setTimeout(()=>h.remove(),7000);
+  },450);
+</script>
+</body>
+</html>
